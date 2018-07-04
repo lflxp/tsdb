@@ -50,7 +50,7 @@ import (
 // 	H  int
 // }
 
-func main() {
+func maind() {
 	// pkg.Test()
 	// fmt.Println(os.Getpagesize())
 	// fmt.Println(metaPageFlag)
