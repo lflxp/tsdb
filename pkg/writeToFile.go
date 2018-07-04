@@ -7,11 +7,12 @@ import (
 )
 
 type Xp struct {
-	B uint32
-	C uint32
-	D uint64
-	G uint32
-	M []byte
+	B  uint32
+	C  uint32
+	D  uint64
+	G  uint32
+	AG uint32
+	M  []byte
 }
 
 func ReadInBuffer(data []byte, id uint64) *Xp {
@@ -20,8 +21,8 @@ func ReadInBuffer(data []byte, id uint64) *Xp {
 
 func PrepareBufData() []byte {
 	pageSize := os.Getpagesize()
-	buf := make([]byte, pageSize*12)
-	for i := 0; i < 12; i++ {
+	buf := make([]byte, pageSize*2)
+	for i := 0; i < 2; i++ {
 		tmp := ReadInBuffer(buf[:], uint64(i))
 		// tmp.A = fmt.Sprintf("%d%s", i, "hello")
 		tmp.G = magic
